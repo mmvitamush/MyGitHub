@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="../static/css/jquery-ui-timepicker-addon.min.css">
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/chart.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.1/js/bootstrap.min.js"></script>
+	<script src="../static/js/jquery-ui-timepicker-addon.min.js"></script>
+	<script src="../static/js/jquery-ui-sliderAccess.js"></script>
+	<script src="../static/js/jquery-ui-tiamepicker-ja.js"></script>
+	<script src="../static/js/tab.js"></script>
+	<script src="../static/js/jquery.flot.js"></script>
+	<script src="../static/js/jquery.flot.selection.min.js"></script>
+	<script src="../static/js/jquery.flot.time.min.js"></script>
+	<script src="../static/js/chart_m.js"></script>
+	
+  </head>
+  <body>
+	  <div class="row">
+		  	<div class="col-md-12">
+		  		<ul class="nav nav-tabs" id="myTab">
+		  			<li class="active"><a href="#realtime" data-toggle="tab">リアルタイム</a></li>
+		  			<li><a href="#select_d" data-toggle="tab">日時選択</a></li>
+		  		</ul>
+		  	
+		  		<div class="tab-content" id="chartTab">
+			  		<div id="realtime" class="tab-pane chart_wrap fade in active">
+			  			<div id="chart_cels"></div>
+			  			<div></div>
+			  		</div>
+			  		
+			  		<div id="select_d" class="tab-pane chart_wrap fade">
+			  			<div id="selectchart"></div>
+			  			<div class="row input_form">
+			  				<div class="input-group col-lg-6 mgn15">
+			  					<span class="input-group-addon">
+			  						<i class="glyphicon glyphicon-fast-forward"></i>
+			  					</span>
+			  					<input id="datetimepicker1" class="form-control input-lg" type="text" placeholder="開始日時" name="eventStart">
+			  				</div>
+			  				<div class="input-group col-lg-6 mgn15">
+			  					<span class="input-group-addon">
+			  						<i class="glyphicon glyphicon-fast-backward"></i>
+			  					</span>
+			  					<input id="datetimepicker2" class="form-control input-lg" type="text" placeholder="終了日時" name="eventEnd">
+			  				</div>
+			  				
+			  				<div class="input-group col-lg-12 mgn15">
+			  					<button type="button" class="btn btn-primary btn-lg btn-block" id="chartBtn">データ取得</button>
+			  				</div>
+			  				
+			  			</div>	
+			  		</div>
+			  	</div>
+			  	
+		  	</div>
+		  	<div class="col-md-12">
+		  		
+		  		
+		  	</div>
+	  </div>
+  </body>
+</html>

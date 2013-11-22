@@ -1,0 +1,11 @@
+body {
+	font-family: 'Meiryo UI','メイリオ',trebuchet ms,'ヒラギノ丸ゴ ProN W4','HiraMaruProN-W4','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro',Meiryo,'ＭＳ Ｐゴシック',sans-serif;
+}
+
+.pad5 {
+	padding:5px;
+}
+
+.mgn15 {
+ margin:15px 0px 15px 0px;
+} 
