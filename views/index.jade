@@ -1,0 +1,227 @@
+extends layout
+
+block content
+  nav#topnav.navbar.navbar-default.container(role='navigation')
+     a.navbar-brand.col-lg-2.col-sm-1.col-xs-12(href='index.html'): span Dash Boad
+     ul.nav.navbar-nav.navbar-right
+        li: a(href='#'): span.glyphicon.glyphicon-file
+        li: a(href='#'): span.glyphicon.glyphicon-bell
+        li: a(href='#'): span.glyphicon.glyphicon-wrench
+  section#topsection
+   div.container
+     div.row
+       div#sidebar-left.col-xs-2
+            div.nav-collapse.sidebar-nav.collapse.navbar-collapse.bs-navbar-collapse
+                ul.nav.nav-tabs.nav-stacked.main-menu
+                    li.active: a(href='index.html')
+                        i.glyphicon.glyphicon-list-alt
+                        span.hidden-sm ダッシュボード
+                    li: a(href='http://localhost:3000/line')
+                        i.glyphicon.glyphicon-list
+                        span.hidden-sm ライン管理
+                    li: a(href='http://localhost:3000/schedule')
+                        i.glyphicon.glyphicon-calendar
+                        span.hidden-sm スケジュール
+                    li: a(href='http://localhost:3000/tasks')
+                        i.glyphicon.glyphicon-tasks
+                        span.hidden-sm 進捗管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-phone
+                        span.hidden-sm 端末管理
+
+
+       div#content.col-xs-10
+            div.row
+             div.col-md-12
+                    div.row.rowoverride
+                        div#jquery-knob.col-md-4
+                          div.wrapcelsius
+                            div.celsiusgrid.row.rowoverride
+                                   div.col-md-12.gridicon
+                                      span.celspan1.glyphicon.glyphicon-fire
+                                   div.row.rowoverride
+                                    div.col-md-6
+                                        h4.hoverride1.glyphicon.glyphicon-time 現在温度
+                                        span.celspan2.input1 0
+                                        span.celspan ℃
+                                    div.col-md-6
+                                        h4.hoverride1.glyphicon.glyphicon-cog 設定温度
+                                        span#setcelspan.celspan2 #{celsiusPoint}
+                                        span.celspan ℃
+                        div.col-md-4
+                                div.list-box
+                                    ul.list-group#celsius_info
+                                        li.list-group-item.listoverride
+                                           span.label.label-primary 設定値　　
+                                           span.list-item-span #{cels_a_b}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 許容値上限
+                                            span.list-item-span #{cels_range_top}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 許容値下限
+                                            span.list-item-span #{cels_range_bottom}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 自動切替え
+                                            span.list-item-span #{cels_auto_toggle}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 状態　　　
+                                            span.list-item-span #{cels_active}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 取得間隔　
+                                            span.list-item-span #{cels_get_time}
+                        div.col-md-4
+                                div#celsius-input.inputform.row
+                                  form#celsiusForm(method='POST',action='/api/setting')  
+                                        div.input-group.input-group-lg.input-cog
+                                            span.input-group-addon
+                                                i.glyphicon.glyphicon-fire
+                                            input.required.form-control(type='text',placeholder='設定温度',name='celsiusPoint')
+                                            span.input-group-addon ℃
+
+                                        div.row
+                                            div.col-md-6
+                                                    div.input-group.input-cog
+                                                        span.input-group-addon
+                                                            i.glyphicon.glyphicon-arrow-up
+                                                        input.form-control(type='text',placeholder='許容値上限',name='celsiusTop')
+
+                                            div.col-md-6
+                                                    div.input-group.input-cog
+                                                        span.input-group-addon
+                                                            i.glyphicon.glyphicon-arrow-down
+                                                        input.form-control(type='text',placeholder='許容値下限',name='celsiusBottom')
+
+                                        div.row
+                                           div.col-md-6
+                                            div.input-group.input-cog
+                                                span.input-group-addon
+                                                    i.glyphicon.glyphicon-time
+                                                input.form-control(type='text',placeholder='取得間隔',name='celsiusTime')    
+                                                span.input-group-addon 秒
+
+                                           div.col-md-6
+                                                    div
+                                                        label
+                                                            input#option1(type='radio',name='cels-options',value='ON') 
+                                                            | 自動切替ON
+                                                        label
+                                                            input#option2(type='radio',name='cels-options',value='OFF',style='margin-left:10px;')
+                                                            | OFF
+
+                                        div.btn-group
+                                            button#send_celsius.btn.btn-default.btn-lg(type='submit')
+                                                span.glyphicon.glyphicon-send  設定送信
+                                            div#cels_loading
+
+            div.row
+                            div.col-sm-12
+                                    div.box
+                                        div.box-header
+                                            h2: i.glyphicon.glyphicon-list-alt 
+                                            h2 chart
+                                        div.box-content
+                                            div.chart-type1
+                                                div#celsius-chart   
+             
+
+            div.row.sec
+              div.col-md-12
+                     div.row.rowoverride
+                        div#jquery-knob1.col-sm-4
+                         div.wrapcelsius
+                            div.humiditygrid.row.rowoverride
+                                   div.col-md-12.gridicon2
+                                      span.humspan1.glyphicon.glyphicon-tint
+                                   div.row.rowoverride
+                                    div.col-md-6
+                                        h4.hoverride2.glyphicon.glyphicon-time 現在湿度
+                                        span.celspan2.input2 0
+                                        span.celspan %
+                                    div.col-md-6
+                                        h4.hoverride2.glyphicon.glyphicon-cog 設定湿度
+                                        span#sethumdspan.celspan2 #{humdPoint}
+                                        span.celspan %
+                        div.col-sm-4
+                            div.list-box
+                                    ul.list-group#humidity_info
+                                        li.list-group-item.listoverride
+                                           span.label.label-primary 設定値　　
+                                           span.list-item-span #{humd_a_b}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 許容値上限
+                                            span.list-item-span #{humd_range_top}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 許容値下限
+                                            span.list-item-span #{humd_range_bottom}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 自動切替え
+                                            span.list-item-span #{humd_auto_toggle}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 状態　　　
+                                            span.list-item-span #{humd_active}
+                                        li.list-group-item.listoverride
+                                            span.label.label-primary 取得間隔　
+                                            span.list-item-span #{humd_get_time}
+                        div.col-md-4  
+                                div#hum-input.inputform
+                                  form#humidityForm(method='POST',action='/api/setting')
+                                   div.input-group.input-group-lg.input-cog
+                                           span.input-group-addon
+                                               i.glyphicon.glyphicon-fire
+                                           input.form-control(type='text',placeholder='設定温度',name='humidityPoint')
+                                           span.input-group-addon ℃
+
+                                       div.row
+                                           div.col-md-6
+                                                   div.input-group.input-cog
+                                                       span.input-group-addon
+                                                           i.glyphicon.glyphicon-arrow-up
+                                                       input.form-control(type='text',placeholder='許容値上限',name='humidityTop')
+
+                                           div.col-md-6
+                                                   div.input-group.input-cog
+                                                       span.input-group-addon
+                                                           i.glyphicon.glyphicon-arrow-down
+                                                       input.form-control(type='text',placeholder='許容値下限',name='humidityBottom')
+
+                                       div.row
+                                          div.col-md-6
+                                           div.input-group.input-cog
+                                               span.input-group-addon
+                                                   i.glyphicon.glyphicon-time
+                                               input.form-control(type='text',placeholder='取得間隔',name='humidityTime')    
+                                               span.input-group-addon 秒
+
+                                          div.col-md-6
+                                           div
+                                               label
+                                                   input#option3(type='radio',name='hum-options',value='ON') 
+                                                   | 自動切替ON
+                                               label
+                                                   input#option4(type='radio',name='hum-options',value='OFF')
+                                                   | OFF
+
+                                       div.btn-group
+                                           button#send_humidity.btn.btn-default.btn-lg(type='submit')
+                                                   span.glyphicon.glyphicon-send  設定送信  
+                                           div#humd_loading
+
+            div.row
+                        div.col-sm-12
+                            div.box
+                                div.box-header
+                                    h2: i.glyphicon.glyphicon-list-alt
+                                    h2 Chart
+                                div.box-content
+                                    div.chart-type1
+                                        div#hum-chart
+              
+
+   
+  script(src='javascripts/temperature.js')
+  script(src='javascripts/jquery.flot.js')
+  script(src='javascripts/jquery.flot.time.min.js')
+  script(src='javascripts/jquery.flot.selection.min.js')
+  script(src='javascripts/button.js')
+  script(src='javascripts/jquery.validate.min.js')
+  script(src='javascripts/send_data.js')

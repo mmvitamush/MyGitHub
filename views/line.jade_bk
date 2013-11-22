@@ -1,0 +1,213 @@
+extends layout
+
+block content
+  nav#topnav.navbar.navbar-default.container(role='navigation')
+     a.navbar-brand.col-lg-2.col-sm-1.col-xs-12(href='index.html'): span Dash Boad
+     ul.nav.navbar-nav.navbar-right
+        li: a(href='#'): span.glyphicon.glyphicon-file
+        li: a(href='#'): span.glyphicon.glyphicon-bell
+        li: a(href='#'): span.glyphicon.glyphicon-wrench
+  section#topsection
+   div.container
+     div.row
+       div#sidebar-left.col-lg-2.col-sm-1
+            div.nav-collapse.sidebar-nav.collapse.navbar-collapse.bs-navbar-collapse
+                ul.nav.nav-tabs.nav-stacked.main-menu
+                    li: a(href='/')
+                        i.glyphicon.glyphicon-list-alt
+                        span.hidden-sm ダッシュボード
+                    li.active: a(href='http://localhost:3000/line')
+                        i.glyphicon.glyphicon-list
+                        span.hidden-sm ライン管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-calendar
+                        span.hidden-sm スケジュール
+                    li: a(href='http://localhost:3000/tasks')
+                        i.glyphicon.glyphicon-tasks
+                        span.hidden-sm 進捗管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-phone
+                        span.hidden-sm 端末管理
+       div#content.col-lg-10.col-sm-11
+           div.row
+                    div.col-md-2.pricing-span-body
+                        div.box
+                            div.box-header.blue
+                                span ラインA
+                            div
+                              table.table
+                                   thead
+                                        tr
+                                            th.blue 現在値
+                                            th.blue 設定値
+                                   tbody
+                                        tr
+                                            td 20℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                        tr.success
+                                            td 21℃
+                                            td 23℃
+                                        tr.success
+                                            td 50%
+                                            td 50%
+                                        tr
+                                            td 22℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                
+                              div: button.btn.btn-primary.btn-block.black(type="button") 設定変更
+                    div.col-md-2.pricing-span-body
+                        div.box
+                            div.box-header.green
+                                span ラインB
+                            div
+                              table.table
+                                   thead
+                                        tr
+                                            th.green 現在値
+                                            th.green 設定値
+                                   tbody
+                                        tr
+                                            td 20℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                        tr.success
+                                            td 21℃
+                                            td 23℃
+                                        tr.success
+                                            td 50%
+                                            td 50%
+                                        tr
+                                            td 22℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                div: button.btn.btn-primary.btn-block.black(type="button") 設定変更
+                    div.col-md-2.pricing-span-body
+                        div.box
+                            div.box-header.orange
+                                span ラインC
+                            div
+                              table.table
+                                   thead
+                                        tr
+                                            th.orange 現在値
+                                            th.orange 設定値
+                                   tbody
+                                        tr
+                                            td 20℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                        tr.success
+                                            td 21℃
+                                            td 23℃
+                                        tr.success
+                                            td 50%
+                                            td 50%
+                                        tr
+                                            td 22℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                div: button.btn.btn-primary.btn-block.black(type="button") 設定変更
+                    div.col-md-2.pricing-span-body
+                        div.box
+                            div.box-header.purple
+                                span ラインD
+                            div
+                              table.table
+                                   thead
+                                        tr
+                                            th.purple 現在値
+                                            th.purple 設定値
+                                   tbody
+                                        tr
+                                            td 20℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                        tr.success
+                                            td 21℃
+                                            td 23℃
+                                        tr.success
+                                            td 50%
+                                            td 50%
+                                        tr
+                                            td 22℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                div: button.btn.btn-primary.btn-block.black(type="button") 設定変更
+                    div.col-md-2.pricing-span-body
+                        div.box
+                            div.box-header.red
+                                span ラインE
+                            div
+                              table.table
+                                   thead
+                                        tr
+                                            th.red 現在値
+                                            th.red 設定値
+                                   tbody
+                                        tr
+                                            td 20℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                        tr.success
+                                            td 21℃
+                                            td 23℃
+                                        tr.success
+                                            td 50%
+                                            td 50%
+                                        tr
+                                            td 22℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                div: button.btn.btn-primary.btn-block.black(type="button") 設定変更
+                    div.col-md-2.pricing-span-body
+                        div.box
+                            div.box-header.gray
+                                span ラインF
+                            div
+                              table.table
+                                   thead
+                                        tr
+                                            th.gray 現在値
+                                            th.gray 設定値
+                                   tbody
+                                        tr
+                                            td 20℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                        tr.success
+                                            td 21℃
+                                            td 23℃
+                                        tr.success
+                                            td 50%
+                                            td 50%
+                                        tr
+                                            td 22℃
+                                            td 23℃
+                                        tr
+                                            td 50%
+                                            td 50%
+                                div: button.btn.btn-primary.btn-block.black(type="button") 設定変更

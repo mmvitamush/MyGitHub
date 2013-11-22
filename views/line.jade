@@ -1,0 +1,177 @@
+extends layout
+
+block content
+  nav#topnav.navbar.navbar-default.container(role='navigation')
+     a.navbar-brand.col-lg-2.col-sm-1.col-xs-12(href='index.html'): span Dash Boad
+     ul.nav.navbar-nav.navbar-right
+        li: a(href='#'): span.glyphicon.glyphicon-file
+        li: a(href='#'): span.glyphicon.glyphicon-bell
+        li: a(href='#'): span.glyphicon.glyphicon-wrench
+  section#topsection
+   div.container
+     div.row
+       div#sidebar-left.col-lg-2.col-sm-1
+            div.nav-collapse.sidebar-nav.collapse.navbar-collapse.bs-navbar-collapse
+                ul.nav.nav-tabs.nav-stacked.main-menu
+                    li: a(href='/')
+                        i.glyphicon.glyphicon-list-alt
+                        span.hidden-sm ダッシュボード
+                    li.active: a(href='http://localhost:3000/line')
+                        i.glyphicon.glyphicon-list
+                        span.hidden-sm ライン管理
+                    li: a(href='http://localhost:3000/schedule')
+                        i.glyphicon.glyphicon-calendar
+                        span.hidden-sm スケジュール
+                    li: a(href='http://localhost:3000/tasks')
+                        i.glyphicon.glyphicon-tasks
+                        span.hidden-sm 進捗管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-phone
+                        span.hidden-sm 端末管理
+       div#content.col-lg-10.col-sm-11
+           div.row
+                 div.col-md-4
+                    div.widget-wrap.blue
+                        div.widget-header
+                            i.glyphicon.glyphicon-fire
+                            span.count
+                                span.number  29
+                                span.unit ℃  
+                            span.sep / 
+                            span.value
+                                span.number 30
+                                span.unit ℃ 
+                                i.glyphicon.glyphicon-cog
+                        div.widget-content
+                            span A
+                        div.widget-footer
+                            i.glyphicon.glyphicon-tint
+                            span.count
+                                span.number  49
+                                span.unit % 
+                            span.sep / 
+                            span.value
+                                span.number 54
+                                span.unit % 
+                                i.glyphicon.glyphicon-cog
+                 div.col-md-4
+                    div.widget-wrap.green
+                        div.widget-header
+                            i.glyphicon.glyphicon-fire
+                            span.count
+                                span.number  29
+                                span.unit ℃ 
+                            span.sep / 
+                            span.value
+                                span.number 30
+                                span.unit ℃ 
+                                i.glyphicon.glyphicon-cog
+                        div.widget-content
+                            span B
+                        div.widget-footer
+                            i.glyphicon.glyphicon-tint
+                            span.count
+                                span.number  49
+                                span.unit % 
+                            span.sep / 
+                            span.value
+                                span.number 54
+                                span.unit % 
+                                i.glyphicon.glyphicon-cog
+                 div.col-md-4
+                    div.widget-wrap.orange
+                        div.widget-header
+                            i.glyphicon.glyphicon-fire
+                            span.count
+                                span.number  29
+                                span.unit ℃ 
+                            span.sep / 
+                            span.value
+                                span.number 30
+                                span.unit ℃ 
+                                i.glyphicon.glyphicon-cog
+                        div.widget-content
+                            span C
+                        div.widget-footer
+                            i.glyphicon.glyphicon-tint
+                            span.count
+                                span.number  49
+                                span.unit % 
+                            span.sep / 
+                            span.value
+                                span.number 54
+                                span.unit % 
+                                i.glyphicon.glyphicon-cog
+           div.row
+                 div.col-md-4
+                    div.widget-wrap.purple
+                        div.widget-header
+                            i.glyphicon.glyphicon-fire
+                            span.count
+                                span.number  29
+                                span.unit ℃ 
+                            span.sep / 
+                            span.value
+                                span.number 30
+                                span.unit ℃ 
+                                i.glyphicon.glyphicon-cog
+                        div.widget-content
+                            span D
+                        div.widget-footer
+                            i.glyphicon.glyphicon-tint
+                            span.count
+                                span.number  49
+                                span.unit % 
+                            span.sep / 
+                            span.value
+                                span.number 54
+                                span.unit % 
+                                i.glyphicon.glyphicon-cog
+                 div.col-md-4
+                    div.widget-wrap.red
+                        div.widget-header
+                            i.glyphicon.glyphicon-fire
+                            span.count
+                                span.number  29
+                                span.unit ℃ 
+                            span.sep / 
+                            span.value
+                                span.number 30
+                                span.unit ℃ 
+                                i.glyphicon.glyphicon-cog
+                        div.widget-content
+                            span E
+                        div.widget-footer
+                            i.glyphicon.glyphicon-tint
+                            span.count
+                                span.number  49
+                                span.unit % 
+                            span.sep / 
+                            span.value
+                                span.number 54
+                                span.unit % 
+                                i.glyphicon.glyphicon-cog
+                 div.col-md-4
+                    div.widget-wrap.yellow
+                        div.widget-header
+                            i.glyphicon.glyphicon-fire
+                            span.count
+                                span.number  29
+                                span.unit ℃ 
+                            span.sep / 
+                            span.value
+                                span.number 30
+                                span.unit ℃ 
+                                i.glyphicon.glyphicon-cog
+                        div.widget-content
+                            span F
+                        div.widget-footer
+                            i.glyphicon.glyphicon-tint
+                            span.count
+                                span.number  49
+                                span.unit % 
+                            span.sep / 
+                            span.value
+                                span.number 54
+                                span.unit % 
+                                i.glyphicon.glyphicon-cog

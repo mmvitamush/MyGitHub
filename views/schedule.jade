@@ -1,0 +1,68 @@
+extends layout
+append css 
+    link(rel='stylesheet', href='/javascripts/fullcalendar-1.6.4/fullcalendar/fullcalendar.css')
+    link(rel='stylesheet', href='/stylesheets/jquery-ui-timepicker-addon.min.css')
+    link(rel='stylesheet', href='/stylesheets/schedule.css')
+append script
+    script(src='javascripts/fullcalendar-1.6.4/fullcalendar/fullcalendar.js')
+    script(src='javascripts/jquery-ui-timepicker-addon.min.js')
+    script(src='javascripts/jquery-ui-sliderAccess.js')
+    script(src='javascripts/jquery-ui-tiamepicker-ja.js')
+    script(src='javascripts/schedule.js')
+block content
+  nav#topnav.navbar.navbar-default.container(role='navigation')
+     a.navbar-brand.col-lg-2.col-sm-1.col-xs-12(href='index.html'): span Dash Boad
+     ul.nav.navbar-nav.navbar-right
+        li: a(href='#'): span.glyphicon.glyphicon-file
+        li: a(href='#'): span.glyphicon.glyphicon-bell
+        li: a(href='#'): span.glyphicon.glyphicon-wrench
+  section#topsection
+   div.container
+     div.row
+       div#sidebar-left.col-lg-2.col-sm-1
+            div.nav-collapse.sidebar-nav.collapse.navbar-collapse.bs-navbar-collapse
+                ul.nav.nav-tabs.nav-stacked.main-menu
+                    li: a(href='/')
+                        i.glyphicon.glyphicon-list-alt
+                        span.hidden-sm ダッシュボード
+                    li: a(href='http://localhost:3000/line')
+                        i.glyphicon.glyphicon-list
+                        span.hidden-sm ライン管理
+                    li.active: a(href='http://localhost:3000/schedule')
+                        i.glyphicon.glyphicon-calendar
+                        span.hidden-sm スケジュール
+                    li: a(href='http://localhost:3000/tasks')
+                        i.glyphicon.glyphicon-tasks
+                        span.hidden-sm 進捗管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-phone
+                        span.hidden-sm 端末管理
+       div#content.col-lg-10.col-sm-11
+           div.row
+                div.col-lg-9
+                        div#calendar1
+                div.col-lg-3
+                        div#calendar_form_wrap
+                            div.wrap_input_group
+                                form#calendar_form(method='POST',action='/api/schedule_create')    
+                                 
+                                            div.input-group.input-group-lg.wrap_input_p
+                                                span.input-group-addon
+                                                    i.glyphicon.glyphicon-pencil
+                                                input.form-control(type='text',placeholder='イベントタイトル',name='eventTitle')
+                                    
+                                            div.input-group.wrap_input_p
+                                                span.input-group-addon
+                                                    i.glyphicon.glyphicon-fast-forward
+                                                input#datetimepicker1.form-control(type='text',placeholder='イベント開始日時',name='eventStart')
+                               
+                                            div.input-group.wrap_input_p
+                                                span.input-group-addon
+                                                    i.glyphicon.glyphicon-fast-backward
+                                                input#datetimepicker2.form-control(type='text',placeholder='イベント終了日時',name='eventEnd')
+
+                                            div.btn-group.wrap_button
+                                                button#send_calendar.btn.btn-success.btn-lg(type='submit')
+                                                    span.glyphicon.glyphicon-calendar  イベント保存    
+  
+  

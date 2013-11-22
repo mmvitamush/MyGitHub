@@ -1,0 +1,35 @@
+extends layout
+
+block content
+  nav#topnav.navbar.navbar-default.container(role='navigation')
+     a.navbar-brand.col-lg-2.col-sm-1.col-xs-12(href='index.html'): span Dash Boad
+     ul.nav.navbar-nav.navbar-right
+        li: a(href='#'): span.glyphicon.glyphicon-file
+        li: a(href='#'): span.glyphicon.glyphicon-bell
+        li: a(href='#'): span.glyphicon.glyphicon-wrench
+  section#topsection
+   div.container
+     div.row
+       div#sidebar-left.col-lg-2.col-sm-1
+            div.nav-collapse.sidebar-nav.collapse.navbar-collapse.bs-navbar-collapse
+                ul.nav.nav-tabs.nav-stacked.main-menu
+                    li: a(href='/')
+                        i.glyphicon.glyphicon-list-alt
+                        span.hidden-sm ダッシュボード
+                    li: a(href='http://localhost:3000/line')
+                        i.glyphicon.glyphicon-list
+                        span.hidden-sm ライン管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-calendar
+                        span.hidden-sm スケジュール
+                    li.active: a(href='http://localhost:3000/tasks')
+                        i.glyphicon.glyphicon-tasks
+                        span.hidden-sm 進捗管理
+                    li: a(href='#index.html')
+                        i.glyphicon.glyphicon-phone
+                        span.hidden-sm 端末管理
+       div#content.col-lg-10.col-sm-11
+           div.row
+                ul#topics-listview
+
+  script(src='javascripts/mobbs.js')

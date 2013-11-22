@@ -1,0 +1,17 @@
+{
+    "databaseAuth": {
+        "user":"root",
+        "database":"mushroom",
+        "password":"root",
+        "host":"localhost",
+        "port":3306
+    },
+    "sessionAuth": {
+        "host":"localhost",
+        "post":11211
+    },
+    "cooloeHash":"mmnetwork",
+    "mongo_host":"localhost",
+    "mongo_port":27017,
+    "mongo_db":"mushroom"    
+}
