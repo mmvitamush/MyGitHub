@@ -9,6 +9,7 @@ import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentActivity;
 //import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +21,10 @@ import android.widget.TextView;
 public class MainActivity extends FragmentActivity implements ListView.OnItemClickListener {
 	  static String[] menuItems = { "Item 1", "Item 2"};
 	  static ArrayAdapter<String> adapter;
-	  
+	  int[] icon;
+	  String[] title;
+	  String[] subtitle;
+	  MenuListAdapter mMenuAdapter;
 	  DrawerLayout drawerLayout;
 	  ListView drawerListView;
 	  ActionBarDrawerToggle drawerToggle;
@@ -30,9 +34,20 @@ public class MainActivity extends FragmentActivity implements ListView.OnItemCli
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		findViews();
-	    setListView();
-	    setDrawer();
+		//findViews();
+	   // setListView();
+	   // setDrawer();
+	    
+	    title = new String[] {"Item1","Item2"};
+	    subtitle = new String[] {"Subtitle1","Subtitle2"};
+	    icon = new int[] {R.drawable.box_32x32,R.drawable.loop_32x32};
+	    drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+	  	drawerListView = (ListView) findViewById(R.id.drawer_listview);
+	  	drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+	  	mMenuAdapter = new MenuListAdapter(MainActivity.this, title, subtitle,icon);
+	  	drawerListView.setAdapter(mMenuAdapter);
+	  	drawerListView.setOnItemClickListener(this);
+	  	setDrawer();
 	}
 	
 	protected void findViews(){
