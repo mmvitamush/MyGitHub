@@ -54,6 +54,11 @@ public class RssLoadingAsyncTask extends AsyncTask<String, Void, List<RssItem>> 
 		        return rssItemList;
 		    }
 			
+			@Override
+		    protected void onPostExecute(List<RssItem> result) {
+		        mRssLoadingAsyncTaskListener.onEndTask(result);
+		    }
+			
 			private List<RssItem> getRssItems(String url) {
 		        List<RssItem> items = null;
 		        InputStream inputStream;
@@ -97,7 +102,7 @@ public class RssLoadingAsyncTask extends AsyncTask<String, Void, List<RssItem>> 
 		                Gson gson = new Gson();
 		                Type collectionType = new TypeToken<Collection<RssItem>>(){}.getType();
 		                items = gson.fromJson(objJson.toString(),collectionType);
-		                
+		               
 
 		                if (inputStream != null) {
 		                    //items = parseXmlContent(inputStream);
