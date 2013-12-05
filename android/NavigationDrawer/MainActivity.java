@@ -39,12 +39,12 @@ public class MainActivity extends FragmentActivity implements ListView.OnItemCli
 	   // setDrawer();
 	    
 	    title = new String[] {"Item1","Item2"};
-	    subtitle = new String[] {"Subtitle1","Subtitle2"};
+	    subtitle = new String[] {null,null};
 	    icon = new int[] {R.drawable.box_32x32,R.drawable.loop_32x32};
 	    drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 	  	drawerListView = (ListView) findViewById(R.id.drawer_listview);
 	  	drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
-	  	mMenuAdapter = new MenuListAdapter(MainActivity.this, title, subtitle,icon);
+	  	mMenuAdapter = new MenuListAdapter(MainActivity.this, title,icon);
 	  	drawerListView.setAdapter(mMenuAdapter);
 	  	drawerListView.setOnItemClickListener(this);
 	  	setDrawer();
