@@ -38,9 +38,13 @@ public class MainActivity extends FragmentActivity implements ListView.OnItemCli
 	   // setListView();
 	   // setDrawer();
 	    
-	    title = new String[] {"Item1","Item2"};
-	    subtitle = new String[] {null,null};
-	    icon = new int[] {R.drawable.box_32x32,R.drawable.loop_32x32};
+	    title = new String[] {"Item1","Item2","Item3","Item4","Item5"};
+	    //subtitle = new String[] {null,null};
+	    icon = new int[] {R.drawable.sun_stroke_32x32,
+	    		R.drawable.target_32x32,
+	    		R.drawable.list_32x28,
+	    		R.drawable.chart_32x32,
+	    		R.drawable.wrench_32x32};
 	    drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 	  	drawerListView = (ListView) findViewById(R.id.drawer_listview);
 	  	drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
@@ -87,6 +91,9 @@ public class MainActivity extends FragmentActivity implements ListView.OnItemCli
 				break;
 			case 1:
 				ft.replace(R.id.content_frame, new SecondFragment());
+				break;
+			case 2:
+				ft.replace(R.id.content_frame, new TableFragment());
 				break;
 			default:
 				break;
